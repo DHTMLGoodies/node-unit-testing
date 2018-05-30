@@ -29,10 +29,7 @@ describe("number tests", function () {
         });
     });
 
-
-
     describe("with setUp and tearDown", function () {
-
         var num;
 
         beforeEach(function () {
@@ -53,5 +50,4 @@ describe("number tests", function () {
             num.should.equal(12);
         });
     });
-
 });

@@ -9,3 +9,9 @@ Test runner
 ```
 mocha test.js
 ```
+
+## Watch mode
+
+```
+mocha -w
+````
