@@ -40,6 +40,19 @@ describe("sinon test", function(){
             student.dropClass(1, spy);
             spy.called.should.be.true;
         });
+
+        it("should call the callback and log to the console", function(){
+            function onClassDropped(){
+                console.log("dropped out of class");
+            }
+
+            var spy = sinon.spy(onClassDropped);
+
+            student.dropClass(1, spy);
+
+            spy.called.should.be.true;
+
+        });
     });
 
 });
