@@ -23,12 +23,25 @@ describe("sinon test", function () {
                 } else {
                     cb();
                 }
+            },
+
+            addClass: function (schedule) {
+                if (!schedule.classIsFull()) {
+                    // do stuff
+                    return true;
+                } else {
+                    return false;
+                }
             }
         };
 
         schedule = {
             dropClass: function () {
                 console.log("dropped out of schedule");
+            },
+
+            classIsFull: function () {
+                return true;
             }
         };
     });
@@ -69,6 +82,46 @@ describe("sinon test", function () {
             var spy = sinon.spy(schedule, "dropClass");
             student.dropClass(1, schedule);
             schedule.dropClass.called.should.be.true;
+        });
+
+
+    });
+
+    describe("student with stubs", function () {
+
+        it("should call a stub method", function () {
+            var stub = sinon.stub(schedule);
+            student.dropClass(1, stub);
+
+            stub.dropClass.called.should.be.true;
+
+        });
+
+        it("should return true when class is full", function () {
+
+            var stub = sinon.stub(schedule);
+            stub.classIsFull.returns(false);
+
+            var returnValue = student.addClass(stub);
+            returnValue.should.be.true;
+
+        });
+
+    });
+
+    describe("Student with mocks", function () {
+
+
+        it("mocks schedule", function(){
+            // given
+            var mockObject = sinon.mock(schedule);
+            var expectation = mockObject.expects("classIsFull").once();
+
+            // when
+            student.addClass(schedule);
+
+            // then
+            expectation.verify();
         });
     });
 
