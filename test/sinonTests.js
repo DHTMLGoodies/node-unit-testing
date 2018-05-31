@@ -104,13 +104,10 @@ describe("sinon test", function () {
 
             var returnValue = student.addClass(stub);
             returnValue.should.be.true;
-
         });
-
     });
-
+ 
     describe("Student with mocks", function () {
-
 
         it("mocks schedule", function(){
             // given
@@ -124,5 +121,4 @@ describe("sinon test", function () {
             expectation.verify();
         });
     });
-
 });

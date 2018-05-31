@@ -5,10 +5,14 @@
   "main": "test.js",
   "dependencies": {
     "chai": "^4.1.2",
+    "grunt": "^1.0.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^6.0.0",
+    "gulp-util": "^3.0.8",
+    "mocha": "^5.2.0",
     "sinon": "^5.0.10"
-  },
-  "devDependencies": {
-    "mocha": "^5.2.0"
   },
   "scripts": {
     "test": "mocha"
