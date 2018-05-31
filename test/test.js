@@ -25,7 +25,7 @@ describe("number tests", function () {
         });
 
         it("should return false when numer is odd", function () {
-            expect(isEven(5)).to.be.false;
+            expect(isEven(3)).to.be.false;
         });
     });
 
@@ -45,7 +45,7 @@ describe("number tests", function () {
             num.should.equal(10);
         });
 
-        xit("shoudl be 12 when adding 7 to 5", function () {
+        xit("should be 12 when adding 7 to 5", function () {
             num = add(num, 7);
             num.should.equal(12);
         });
