@@ -15,3 +15,11 @@ mocha test.js
 ```
 mocha -w
 ````
+
+## coverage
+
+```
+npm install istanbul -g
+istanbul cover _mocha -- -R spec
+```
+
